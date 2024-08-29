@@ -1,0 +1,56 @@
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    justify-content: space-between;
+    margin: 0;
+    text-align: center;
+}
+
+nav {
+    background-color: rgb(50, 202, 202);
+    height: 5vh;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+}
+
+.form__body {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    width: 80%;
+    max-width: 400px;
+}
+
+.field {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.25em;
+}
+
+.field__detail{
+    display: flex;
+    flex-direction: column;
+}
+
+.error {
+    color: red;
+    font-size: 0.9em;
+}
+
+.invalid {
+    border-color: red;
+}
+
+.valid {
+    border-color: green;
+}

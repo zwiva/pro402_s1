@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumativa S3</title>
+    <script defer src="app.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+    </nav>
+    <main>
+        <h1>
+            Ficha medica
+        </h1>
+
+        <div class="form">
+            <div class="form__body">
+                <!-- <form> -->
+                <label class="field" for="rut">RUT:
+                    <div class="field__detail">
+                        <input type="text" id="rut" name="rut" placeholder="12.345.678-9" onblur="validarRut()">
+                        <span id="errorRut" class="error"></span>
+                    </div>
+                </label>
+                <label class="field" for="nombre">Nombres:
+                    <div class="field__detail">
+                        <input type="text" id="nombre" name="nombre"
+                            onblur="validarCampoTexto('nombre', 'errorNombre', 'Por favor, ingrese su nombre.')">
+                        <span id="errorNombre" class="error"></span>
+                    </div>
+                </label>
+                <label class="field" for="apellido">Apellidos:
+                    <div class="field__detail">
+                        <input type="text" id="apellido" name="apellido"
+                            onblur="validarCampoTexto('apellido', 'errorApellido', 'Por favor, ingrese su apellido.')">
+                        <span id="errorApellido" class="error"></span>
+                    </div>
+                </label>
+                <label class="field" for="direccion">Dirección:
+                    <div class="field__detail">
+                        <input type="text" id="direccion" name="direccion"
+                            onblur="validarCampoTexto('direccion', 'errorDireccion', 'Por favor, ingrese su dirección.')">
+                        <span id="errorDireccion" class="error"></span>
+                    </div>
+                </label>
+                <label class="field" for="ciudad">Ciudad:
+                    <div class="field__detail">
+                        <input type="text" id="ciudad" name="ciudad"
+                            onblur="validarCampoTexto('ciudad', 'errorCiudad', 'Por favor, ingrese su ciudad.')">
+                        <span id="errorCiudad" class="error"></span>
+                    </div>
+                </label>
+                <label class="field" for="telefono">Teléfono:
+                    <div class="field__detail">
+                        <input type="text" id="telefono" name="telefono" onblur="validarTelefono()">
+                        <span id="errorTelefono" class="error"></span>
+                    </div>
+                </label>
+                <label class="field" for="email">Email:
+                    <div class="field__detail">
+                        <input type="email" id="email" name="email" onblur="validarEmail()">
+                        <span id="errorEmail" class="error"></span>
+                    </div>
+                </label>
+                <label class="field" for="fechaNacimiento">Fecha de Nacimiento:
+                    <div class="field__detail">
+                        <input type="date" id="fechaNacimiento" name="fechaNacimiento"
+                            onblur="validarFechaNacimiento()">
+                        <span id="errorFechaNacimiento" class="error"></span>
+                    </div>
+                </label>
+                <label class="field" for="estadoCivil">Estado Civil:
+                    <div class="field__detail">
+                        <select id="estadoCivil" name="estadoCivil" onchange="validarEstadoCivil()">
+                            <option value="">Seleccione...</option>
+                            <option value="soltero">Soltero</option>
+                            <option value="casado">Casado</option>
+                            <option value="divorciado">Divorciado</option>
+                            <option value="viudo">Viudo</option>
+                        </select>
+                        <span id="errorEstadoCivil" class="error"></span>
+                    </div>
+                </label>
+                <label class="field" for="comentario">
+                    Comentarios
+                    <input type="text" id="comentario" name="comentario">
+                </label>
+
+                <button onclick="registrarFicha()"> Enviar </button>
+
+                <!-- </form> -->
+            </div>
+        </div>
+    </main>
+    <footer>
+        powered by AndreaCastro
+    </footer>
+
+</body>
+
+</html>
