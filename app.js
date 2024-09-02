@@ -332,8 +332,8 @@ function buscarPersona(dataPersona) {
     if (encontrados.length) {
         for (let encontrado of encontrados) {
             lista.innerHTML = lista.innerHTML ?
-                `${lista.innerHTML}<p>${encontrado.nombres} ${encontrado.apellidos}</p>` :
-                `<p>${encontrado.nombres} ${encontrado.apellidos}</p>`;
+                `${lista.innerHTML}<li>${encontrado.nombres} ${encontrado.apellidos} - rut: ${encontrado.rut}</li>` :
+                `<li>${encontrado.nombres} ${encontrado.apellidos} - rut: ${encontrado.rut}</li>`;
         }
     }
 }

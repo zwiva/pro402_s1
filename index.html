@@ -10,12 +10,15 @@
 </head>
 
 <body>
-    <nav>
+    <nav style="display: flex; justify-content: center;">
+        <p style="font-size: 1.5em; margin: 0.25em; overflow: hidden;">🏥🥼💉⚕️🩹💊🩼🩺🏥🥼💉⚕️🩹💊🩼🩺🏥🥼💉⚕️🩹💊🩼🩺
+        </p>
     </nav>
     <main>
         <h1>
-            Nueva ficha médica
+            Nueva ficha médica 📇
         </h1>
+        <!-- Formulario -->
         <div class="form">
             <div class="form__body">
                 <label class="field" for="rut">RUT:
@@ -106,7 +109,7 @@
                 </div>
             </div>
         </div>
-
+        <!-- Modal sobreescribir -->
         <div id="modalSobre" class="noshow_modal">
             <div style="width: 300px; background-color: white; border-radius: 1em; box-shadow: 1px 1px 9px #807d7f;">
                 <div style="width: 100%; text-align: end;">
@@ -129,9 +132,8 @@
                 </div>
             </div>
         </div>
-
-        <hr style="border: 1px solid aquamarine; width: 50%;">
-
+        <hr style="border: 1px solid #32caca; width: 50%;">
+        <!-- Buscador pacientes -->
         <div>
             <div>
                 <h2>Buscador pacientes registrados</h2>
@@ -140,12 +142,15 @@
                 </div>
             </div>
             <div>
-                <h3>Coincidencias búsqueda:</h3>
-                <div id="listaEncontrados"></div>
+                <h4>Coincidencias búsqueda:</h4>
+                <div style="display: flex; justify-content: center;">
+                    <div id="listaEncontrados" style="width: 320px; text-align: start;">
+                    </div>
+                </div>
             </div>
         </div>
     </main>
-    <footer>
+    <footer style="padding: 1em; background-color: #32caca; color: white;">
         powered by code 🤖
     </footer>
 

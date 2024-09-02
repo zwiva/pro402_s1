@@ -97,3 +97,7 @@ main {
     color: #32caca;
     font-weight: bold;
 }
+
+li::marker {
+    color: #32caca;
+}
