@@ -158,7 +158,7 @@ function validarCampoTexto(id, errorId, detalle) {
                 validateData.ciudad = true;
                 break;
             case 'comentario':
-                data.ciudad = campo;
+                data.comentario = campo;
                 validateData.comentario = true;
                 break;
             default:
