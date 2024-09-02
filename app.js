@@ -61,7 +61,7 @@ const usuariosRegistrados = [ // dummy data
     }
 ];
 
-const data = { // esqueleto data
+let data = { // esqueleto data
     rut: '',
     nombres: '',
     apellidos: '',
@@ -275,6 +275,18 @@ function limpiarFormulario() {
     document.getElementById('fechaNacimiento').value = '';
     document.getElementById('estadoCivil').value = '';
     document.getElementById('comentario').value = '';
+    data = {
+        rut: '',
+        nombres: '',
+        apellidos: '',
+        direccion: '',
+        ciudad: '',
+        telefono: '',
+        email: '',
+        fechaDeNacimiento: '',
+        estadoCivil: '',
+        comentario: ''
+    }
 }
 
 function mostrarModalExito() {
@@ -300,15 +312,15 @@ function registrarFicha() {
     }
     // valida por rut que usuario no este duplicado:
     const existente = usuariosRegistrados.filter(usuario => usuario.rut === data.rut);
-    if (!existente.length) {
-        usuariosRegistrados.push(data);
-        // console.log('usuario nuevo agregado');
-        limpiarFormulario();
-        mostrarModalExito();
-    } else { // muestra modal conflicto duplicados
+    if (existente.length) {
         document.getElementById('modalSobre').classList.remove('noshow_modal');
         document.getElementById('modalSobre').classList.add('show_modal');
+        return
     }
+    usuariosRegistrados.push(data);
+    // console.log('usuario nuevo agregado');
+    limpiarFormulario();
+    mostrarModalExito();
 }
 
 function sobreescribirFicha() {
