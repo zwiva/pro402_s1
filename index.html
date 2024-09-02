@@ -113,11 +113,11 @@
         <div id="modalSobre" class="noshow_modal">
             <div style="width: 300px; background-color: white; border-radius: 1em; box-shadow: 1px 1px 9px #807d7f;">
                 <div style="width: 100%; text-align: end;">
-                    <p style="margin: 1em; cursor: pointer;">❌</p>
+                    <p style="margin: 1em; cursor: pointer;" onclick="cancelaAccionSobreescribir()">❌</p>
                 </div>
                 <div>Usuario ya existe. ¿Desea sobreescribir?</div>
                 <div style="margin: 2em 0; width: 100%; display: flex; justify-content: space-evenly;">
-                    <button onclick="cancelaAccion()" style="padding: 0.5em 3em;
+                    <button onclick="cancelaAccionSobreescribir()" style="padding: 0.5em 3em;
                     border-radius: 1em;
                     border: none;
                     background-color: #f71f69;
@@ -130,6 +130,16 @@
                     color: white;
                     font-weight: bold;">Si</button>
                 </div>
+            </div>
+        </div>
+        <!-- Modal registro exitoso -->
+        <div id="modalExito" class="noshow_modal">
+            <div style="width: 300px; background-color: white; border-radius: 1em; box-shadow: 1px 1px 9px #807d7f; padding: 1em;">
+                <div style="width: 100%; text-align: end;">
+                    <p style="margin: 1em; cursor: pointer;" onclick="cierraModalExito()">❌</p>
+                </div>
+                <p >Usuario registrado exitosamente ✅.</p>
+                <p style="font-size: 0.75em;">Este mensaje se cerrará en 3 segundos...</p>
             </div>
         </div>
         <hr style="border: 1px solid #32caca; width: 50%;">

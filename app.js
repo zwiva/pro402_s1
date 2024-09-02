@@ -1,30 +1,4 @@
-const data = {
-    rut: '',
-    nombres: '',
-    apellidos: '',
-    direccion: '',
-    ciudad: '',
-    telefono: '',
-    email: '',
-    fechaDeNacimiento: '',
-    estadoCivil: '',
-    comentario: ''
-}
-
-const validateData = {
-    rut: false,
-    nombres: false,
-    apellidos: false,
-    direccion: false,
-    ciudad: false,
-    telefono: false,
-    email: false,
-    fechaDeNacimiento: false,
-    estadoCivil: false,
-    comentario: false
-}
-
-const usuariosRegistrados = [
+const usuariosRegistrados = [ // dummy data
     {
         rut: '8.765.432-1',
         nombres: 'Carlos',
@@ -86,6 +60,32 @@ const usuariosRegistrados = [
         comentario: 'Pregunta por promociones en servicios.'
     }
 ];
+
+const data = { // esqueleto data
+    rut: '',
+    nombres: '',
+    apellidos: '',
+    direccion: '',
+    ciudad: '',
+    telefono: '',
+    email: '',
+    fechaDeNacimiento: '',
+    estadoCivil: '',
+    comentario: ''
+}
+
+const validateData = { // validacion
+    rut: false,
+    nombres: false,
+    apellidos: false,
+    direccion: false,
+    ciudad: false,
+    telefono: false,
+    email: false,
+    fechaDeNacimiento: false,
+    estadoCivil: false,
+    comentario: false
+}
 
 function validarRut() {
     const rut = document.getElementById('rut').value;
@@ -264,7 +264,6 @@ function validarFormulario() {
     document.getElementById('botonenviar').classList.add('btn_active');
 }
 
-// LIMPIAR FORMULARIO
 function limpiarFormulario() {
     document.getElementById('rut').value = '';
     document.getElementById('nombre').value = '';
@@ -276,6 +275,19 @@ function limpiarFormulario() {
     document.getElementById('fechaNacimiento').value = '';
     document.getElementById('estadoCivil').value = '';
     document.getElementById('comentario').value = '';
+}
+
+function mostrarModalExito() {
+    document.getElementById('modalExito').classList.remove('noshow_modal');
+    document.getElementById('modalExito').classList.add('show_modal');
+    setTimeout(() => {
+        cierraModalExito();
+    }, 3000);
+}
+
+function cierraModalExito() {
+    document.getElementById('modalExito').classList.remove('show_modal');
+    document.getElementById('modalExito').classList.add('noshow_modal');
 }
 
 // GUARDAR FICHA
@@ -290,8 +302,9 @@ function registrarFicha() {
     const existente = usuariosRegistrados.filter(usuario => usuario.rut === data.rut);
     if (!existente.length) {
         usuariosRegistrados.push(data);
-        console.log('usuario nuevo agregado');
+        // console.log('usuario nuevo agregado');
         limpiarFormulario();
+        mostrarModalExito();
     } else { // muestra modal conflicto duplicados
         document.getElementById('modalSobre').classList.remove('noshow_modal');
         document.getElementById('modalSobre').classList.add('show_modal');
@@ -300,18 +313,15 @@ function registrarFicha() {
 
 function sobreescribirFicha() {
     const existente = usuariosRegistrados.findIndex(usuario => usuario.rut === data.rut);
-    // console.log('index detectado', existente);
     usuariosRegistrados.splice(existente, 1);
-    // console.log('durante', usuariosRegistrados);
     usuariosRegistrados.push(data);
-    // console.log('usuario nuevo agregado');
     limpiarFormulario();
     document.getElementById('modalSobre').classList.remove('show_modal');
     document.getElementById('modalSobre').classList.add('noshow_modal');
-    // console.log('finales', usuariosRegistrados);
+    mostrarModalExito();
 }
 
-function cancelaAccion() {
+function cancelaAccionSobreescribir() {
     document.getElementById('modalSobre').classList.remove('show_modal');
     document.getElementById('modalSobre').classList.add('noshow_modal');
 }
@@ -328,7 +338,7 @@ function buscarPersona(dataPersona) {
         return
     }
     const encontrados = usuariosRegistrados.filter(usuario => removerDiacriticas(usuario.apellidos.toLowerCase()).includes(removerDiacriticas(dataPersona.toLowerCase())));
-    console.log('encontrados', encontrados);
+    // console.log('encontrados', encontrados);
     if (encontrados.length) {
         for (let encontrado of encontrados) {
             lista.innerHTML = lista.innerHTML ?
