@@ -275,6 +275,18 @@ function limpiarFormulario() {
     document.getElementById('fechaNacimiento').value = '';
     document.getElementById('estadoCivil').value = '';
     document.getElementById('comentario').value = '';
+
+    document.getElementById('rut').classList = '';
+    document.getElementById('nombre').classList = '';
+    document.getElementById('apellido').classList = '';
+    document.getElementById('direccion').classList = '';
+    document.getElementById('ciudad').classList = '';
+    document.getElementById('telefono').classList = '';
+    document.getElementById('email').classList = '';
+    document.getElementById('fechaNacimiento').classList = '';
+    document.getElementById('estadoCivil').classList = '';
+    document.getElementById('comentario').classList = '';
+    
     data = {
         rut: '',
         nombres: '',
